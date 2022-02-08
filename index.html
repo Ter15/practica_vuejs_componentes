@@ -37,7 +37,10 @@
                         </dl>
 
                         <a v-bind:href="item.href" target="_blank" class="btn btn-primary">Ver</a>
-                        <a v-on:click = "edit-form"  class="btn btn-secondary">Editar</a>
+                        <div id="module-exports">
+                            <a v-on:click = "Editar"  class="btn btn-secondary">Editar</a>
+                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -48,6 +51,23 @@
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
 
+            var example2 = new Vue({
+                el: '#example-2',
+                data: {
+                  name: 'Vue.js'
+                },
+                // definir métodos bajo el objeto `methods`
+                methods: {
+                  saludar: function (event) {
+                    // `this` dentro de los métodos apunta a la instancia de Vue
+                    alert('Hola ' + this.name + '!')
+                    // `evento` es el evento DOM nativo
+                    if (event) {
+                      alert(event.target.tagName)
+                    }
+                  }
+                }
+              })
             <!--
                  TODO: Componente edit-form
             -->
