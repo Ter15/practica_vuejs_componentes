@@ -55,24 +55,7 @@
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
 
-            var app=new Vue({
-                el: '#aplicacion',
-                data:{ 
-                  name:"";
-                  description:"";
-                  director:"";
-                  release:"";
-                },
-                methods: {
-                    //botones
-                    btnEditar: async function(name,titulo, description,release){
-                        await Swal.fire({
-                            <title></title>
-                        })
-                    }
-                  }
-                }      
-              })
+           
             <!--
                  TODO: Componente edit-form
             -->
@@ -82,8 +65,10 @@
 
 
         <!-- Plantilla para el componente item-data -->
-        <script type="text/x-template" id="itemData">
-
+        <script type="text/x-template" id="itemData" bucle="col.collection.title">
+            <item-data 
+            :bucle="col.collection.title">
+                
             <!--
                  TODO: Componente item-data
             -->
@@ -92,6 +77,8 @@
 
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
     </body>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 </html>
 
