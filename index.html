@@ -37,8 +37,12 @@
                         </dl>
 
                         <a v-bind:href="item.href" target="_blank" class="btn btn-primary">Ver</a>
-                        <div id="module-exports">
-                            <a v-on:click = "Editar"  class="btn btn-secondary">Editar</a>
+                        <div v-for="(peli, indice)of movie">
+                            <div>{{peli.name}}</div>
+                            <div>{{peli.titulo}}</div>
+                            <div>{{peli.description}}</div>
+                            <div>{{peli.release}}</div>
+                            <button v-on:click="incrementar" @click="btnEditar (name.id,titulo.id, description.id,release.id)"></button>
                         </div>
                        
                     </div>
@@ -51,22 +55,23 @@
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
 
-            var example2 = new Vue({
-                el: '#example-2',
-                data: {
-                  name: 'Vue.js'
+            var app=new Vue({
+                el: '#aplicacion',
+                data:{ 
+                  name:"";
+                  description:"";
+                  director:"";
+                  release:"";
                 },
-                // definir métodos bajo el objeto `methods`
                 methods: {
-                  saludar: function (event) {
-                    // `this` dentro de los métodos apunta a la instancia de Vue
-                    alert('Hola ' + this.name + '!')
-                    // `evento` es el evento DOM nativo
-                    if (event) {
-                      alert(event.target.tagName)
+                    //botones
+                    btnEditar: async function(name,titulo, description,release){
+                        await Swal.fire({
+                            <title></title>
+                        })
                     }
                   }
-                }
+                }      
               })
             <!--
                  TODO: Componente edit-form
@@ -85,7 +90,7 @@
 
         </script>
 
-        
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
     </body>
 
 </html>
