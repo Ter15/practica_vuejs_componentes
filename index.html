@@ -31,6 +31,9 @@
                 <item-data                                  
                 v-for="item in col.collection.items" 
                 v-if="!arrayEditar.includes(col.collection.items.indexOf(item))"  
+                :pelicula="item" 
+                :indice="col.collection.items.indexOf(item)" 
+                :key="col.collection.items.indexOf(item)"
                 ></item-data>
                 <edit-form v-else :pelicula="item" :indice="col.collection.items.indexOf(item)"></edit-form>
              </div>
