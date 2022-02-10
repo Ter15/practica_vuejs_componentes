@@ -68,7 +68,8 @@ Vue.component('item-data', {
 var app = new Vue({
     el: '#app',
     data: {
-        col: server_data
+        col: server_data,
+        arrayEditar:this.arrayEditar
     }
 });
 
