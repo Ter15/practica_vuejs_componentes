@@ -39,9 +39,17 @@ var server_data = {
 };
 
 
+var arrayEditar=[]; // Array para controlar por cada card qué componente renderizar
+
 // TODO: Componente edit-form
 Vue.component('edit-form', {
-
+    template: '#editForm',
+    props: ['pelicula','indice'],
+    methods: {
+        closeForm: function(indice){
+            arrayEditar.splice(arrayEditar.indexOf(indice),1);
+        }
+    }
 })
 
 // TODO: Componente item-data
