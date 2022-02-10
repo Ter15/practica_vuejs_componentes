@@ -27,10 +27,15 @@
             <div class="jumbotron">
                     <h1 class="display-4" id="title">{{ col.collection.title }}</h1>
             </div>
-            <div class="card-group">
-                <div class="card shadow text-center" v-for="item in col.collection.items"></div>
-                                    
-            </div>
+            <div class="card-group" style="margin:0 50px;">
+                <item-data                                  
+                v-for="item in col.collection.items" 
+                v-if="!arrayEditar.includes(col.collection.items.indexOf(item))"  
+                ></item-data>
+                <edit-form v-else :pelicula="item" :indice="col.collection.items.indexOf(item)"></edit-form>
+             </div>
+        </div>
+    
 
 
         <!-- Plantilla para el componente edit-form -->
