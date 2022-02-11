@@ -46,8 +46,9 @@
             <div class="card">
                 <div class="card-body">
                     <dl v-for="dato in pelicula.data">
-                            <dt>{{dato.prompt}}</dt>
-                            
+                        <dt>{{dato.prompt}}</dt>
+                        <input v-if="dato.prompt != 'Description'" v-model="dato.value" type="text" v-bind:id="dato.name+indice" style="width:90%">
+                        <textarea v-else v-model="dato.value" type="text" v-bind:id="dato.name+indice" style="width:90%;height:20vh"></textarea>
                     </dl>
                     <button v-on:click="closeForm(indice)"  class="btn btn-secondary">Cerrar</button>
                 </div>
