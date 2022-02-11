@@ -58,15 +58,18 @@
 
 
 
-        <!-- Plantilla para el componente item-data -->
-        <script type="text/x-template" id="itemData" bucle="col.collection.title">
-            <item-data 
-            :bucle="col.collection.title">
-                
-            <!--
-                 TODO: Componente item-data
-            -->
-
+      <!-- Plantilla para el componente item-data -->
+        <script type="text/x-template" id="itemData">
+            <div class="card">
+                <div class="card-body">
+                    <dl v-for="dato in pelicula.data">
+                        <dt>{{dato.prompt}}</dt>
+                        <dd>{{dato.value}}</dd>
+                    </dl>
+                    <a v-bind:href="pelicula.href" class="btn btn-primary">Ver</a>
+                    <button v-on:click="toggleEditFormVisibility(indice)"  class="btn btn-secondary">Editar</button>
+                </div>
+            </div>
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
