@@ -43,13 +43,17 @@
 
         <!-- Plantilla para el componente edit-form -->
         <script type="text/x-template" id="editForm">
-
-           
-            <!--
-                 TODO: Componente edit-form
-            -->
-
+            <div class="card">
+                <div class="card-body">
+                    <dl v-for="dato in pelicula.data">
+                            <dt>{{dato.prompt}}</dt>
+                            
+                    </dl>
+                    <button v-on:click="closeForm(indice)"  class="btn btn-secondary">Cerrar</button>
+                </div>
+            </div>
         </script>
+       
 
 
 
